@@ -1,4 +1,4 @@
-package algorithm;
+package algorithm.bfs;
 
 import java.io.BufferedReader;
 import java.io.IOException;
