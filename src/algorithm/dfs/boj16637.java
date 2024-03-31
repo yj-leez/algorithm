@@ -1,4 +1,4 @@
-package algorithm;
+package algorithm.dfs;
 import java.util.*;
 import java.io.*;
 public class boj16637 {
