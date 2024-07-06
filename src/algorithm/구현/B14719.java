@@ -73,3 +73,45 @@ public class B14719 {
         return sum;
     }
 }
+class Solution {
+    /**
+     * 빗물이 차는 한 구간을 구하는 것이 아니라, 한 인덱스별로 찰 수 있는 빗물의 양을 구해서 더한다.
+     */
+    static int H;
+    static int W;
+    static int[] block;
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringTokenizer st = new StringTokenizer(br.readLine());
+
+        H = Integer.parseInt(st.nextToken());
+        W = Integer.parseInt(st.nextToken());
+
+        block = new int[W];
+        st = new StringTokenizer(br.readLine());
+        for (int i = 0; i < W; i++) {
+            block[i] = Integer.parseInt(st.nextToken());
+        }
+
+        int ans = 0;
+        for (int i = 1; i < W - 1; i++) {
+
+            int left = block[0];
+            int right = block[W - 1];
+            for(int j = 1; j < i; j++){
+                if (block[j] > left) left = block[j];
+            }
+            for (int j = W - 2; j > i; j--) {
+                if (block[j] > right) right = block[j];
+            }
+
+            if (block[i] < left && block[i] < right){
+                ans += (left < right? left: right) - block[i];
+            }
+        }
+
+        System.out.println(ans);
+
+    }
+
+}
