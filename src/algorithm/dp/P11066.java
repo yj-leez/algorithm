@@ -1,4 +1,4 @@
-package algorithm.우선순위큐;
+package algorithm.dp;
 
 import java.io.BufferedReader;
 import java.io.IOException;
